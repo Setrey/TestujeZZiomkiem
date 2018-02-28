@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/save scene.unity
+- path: D:/GIT Projects/TestujeZZiomkiem/Assets/save scene.unity
   isLoaded: 1
   isActive: 1
