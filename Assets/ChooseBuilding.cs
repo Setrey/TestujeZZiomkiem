@@ -18,5 +18,6 @@ public class ChooseBuilding : MonoBehaviour {
 
     private void Update() {
         objPos.position = transform.position + offset;
+        //NavMeshSurface
     }
 }
