@@ -1,4 +1,4 @@
-﻿using UnityEngine.EventSystems;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMotor))]
@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
     Camera cam;
     PlayerMotor motor;
     Interactable focus;
+
+    List<GameObject> intercatableObjects = new List<GameObject>();
 
     // Use this for initialization
     void Start() {
@@ -56,8 +58,20 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if(Input.GetKey("LeftAlt")) {
+        if(Input.GetKeyDown(KeyCode.LeftAlt)) {
+            Debug.Log("Left Alt clicked");
+            foreach(GameObject var in intercatableObjects) {
+                Renderer rend = var.GetComponent<Renderer>();
+                rend.material = var.GetComponent<Interactable>().selectedColor;
+            }
+        }
 
+        if(Input.GetKeyUp(KeyCode.LeftAlt)) {
+            Debug.Log("Left Alt unClicked");
+            foreach(GameObject var in intercatableObjects) {
+                Renderer rend = var.GetComponent<Renderer>();
+                rend.material = var.GetComponent<Interactable>().normalColor;
+            }
         }
     }
 
@@ -77,5 +91,13 @@ public class PlayerController : MonoBehaviour {
             focus.OnDefocused();
         focus = null;
         motor.StopFallowingTarget();
+    }
+
+    public void AddToInteractabeList(GameObject obj) {
+        intercatableObjects.Add(obj);
+    }
+
+    public void RemoveFromInteractabeList(GameObject obj) {
+        intercatableObjects.Remove(obj);
     }
 }
