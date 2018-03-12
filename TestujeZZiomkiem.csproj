@@ -80,7 +80,10 @@
   <ItemGroup>
     <Compile Include="Assets\CameraController.cs" />
     <Compile Include="Assets\ChooseBuilding.cs" />
+    <Compile Include="Assets\EnemyState.cs" />
+    <Compile Include="Assets\IEnemyAI.cs" />
     <Compile Include="Assets\Interactable.cs" />
+    <Compile Include="Assets\PatrolState.cs" />
     <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\PlayerMotor.cs" />
   </ItemGroup>
