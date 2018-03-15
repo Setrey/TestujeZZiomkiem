@@ -2,8 +2,8 @@
 
 public class Interactable : MonoBehaviour {
 
-    public float radius = 3f;
     public Transform interactionTransform;
+    public SphereCollider sphereCollider;
 
     bool isFocus = false;
     Transform player;
@@ -21,7 +21,7 @@ public class Interactable : MonoBehaviour {
     private void Update() {
         if(isFocus && !hasInteracted) {
             float distance = Vector3.Distance(player.position, interactionTransform.position);  //obliczanie odleglosci gracza od obiektu
-            if(distance <= radius)  //jezeli odleglosc jest mniejsza od promienia
+            if(distance <= sphereCollider.radius)  //jezeli odleglosc jest mniejsza od promienia
             {
                 //Debug.Log("INTERACT");
                 Interact();
@@ -63,6 +63,10 @@ public class Interactable : MonoBehaviour {
             controller.RemoveFromInteractabeList(gameObject);
             GetComponent<Renderer>().material = normalColor;
         }
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        Debug.Log("Collision ");
     }
 
 }

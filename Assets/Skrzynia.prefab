@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 65102859702874646}
   - component: {fileID: 23148795812708704}
   - component: {fileID: 135837578437081580}
-  - component: {fileID: 114528795535224484}
-  - component: {fileID: 54445045133010138}
+  - component: {fileID: 114250799552334640}
+  - component: {fileID: 54427015472062656}
   m_Layer: 0
   m_Name: Skrzynia
   m_TagString: Untagged
@@ -38,8 +38,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1479094612044812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.78, y: -2.95, z: 6.71}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.29, y: 0.69, z: 0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,14 +84,14 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1479094612044812}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54445045133010138
+--- !u!54 &54427015472062656
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1479094612044812}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -111,7 +111,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114528795535224484
+--- !u!114 &114250799552334640
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60b7f11ec191b84aa4e22cd2476970d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
   interactionTransform: {fileID: 4063245012815702}
+  sphereCollider: {fileID: 135837578437081580}
   normalColor: {fileID: 2100000, guid: 536c306153885c248aad8f202e421581, type: 2}
   selectedColor: {fileID: 2100000, guid: 7e570d1e8f6613543ac2e76478e7a1b7, type: 2}
 --- !u!135 &135837578437081580
